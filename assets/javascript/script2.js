@@ -14,6 +14,29 @@ $(document).ready(function () {
 	var foodItem = [];
 	var foodId = null;
 
+	$(document).on("click", ".foodName", function () {
+		foodName = this;
+		
+		$("#addedList").append(foodName);
+	
+		$(this).addClass('animated pulse');
+		//wait amount of time
+		setTimeout(function(){
+			$(this).removeClass('animated pulse');
+		}, 300);
+
+		setTime();
+	
+	});
+	
+	$(document).on("click", "#recipeList", function() {
+		$(this).addClass('animated pulse');
+		setTimeout(function() {
+			$(this).removeClass('animated pulse');
+			$(this).hide();
+		}, 300);
+	});
+
 	// on click for sumbit change for loading page
 	function findingItems(event) {
 
@@ -28,6 +51,11 @@ $(document).ready(function () {
 			var loadingImg = $("<div>");
 			loadingImg.text('loading...');
 			$("#addedItems").append(loadingImg);
+
+			$(this).addClass("animated tada");
+			setTimeout(function() {
+				$(this).removeClass("animated tada");
+			}, 300);
 
 			var inputItem = $(this).text();
 			// api url pulling from food only queries
@@ -53,7 +81,6 @@ $(document).ready(function () {
 				}
 			}
 
-
 			);
 		});
 	};
@@ -70,13 +97,11 @@ $(document).ready(function () {
 	};
 });
 
-$(document).on("click", ".foodName", function () {
-	foodName = this;
-	$("#addedList").append(foodName);
-	console.log("current item", $(this).attr("data-itemid"))
-	items.push({
-		id: $(this).attr("data-itemid"),
-		type: "walmart_id",
-		quantity: 1
-	});
-});
+function setTime () {
+	var time = moment().valueOf();
+	time = moment(time).format("hh:mm");
+	var timeLine = $('#time-text');
+	timeLine.textContent = time;
+	$('#time-line').text('Last item added at: ');
+	$('#time').text(time);
+}
