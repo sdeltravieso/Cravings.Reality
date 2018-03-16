@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="assets/css/stylesheet.css">
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="./assets/css/animate.css">
+	<script src="./assets/javascript/moment.js"></script>
 </head>
 
 <body>
@@ -60,9 +61,9 @@
 
 							<div class="container neededContainer">
 								<span class="needed">
-									<h2>You need: _______</h2>
+
 								</span>
-								<button class="needed btn btn-success" id="alreadyHave">Already Have</button>
+
 							</div>
 
 							<div class="container listItems">
@@ -89,13 +90,11 @@
 
 					<div class="container addedItems" id="addedList">
 
+						<div class="time-div" id="time-div">
+							<span id="time-line"></span><h4 id="time"></h4></div>
+
 					</div>
-					<!-- <div class="walmart-buy-now" id="btn-buynow" data-publisherid="Cravings.Reality" data-item-walmartid="45698070|2,631|1" data-color="orange" data-size="standard"></div> -->
-					<link rel="stylesheet" href="//affil.walmart.com/buttons/styles/buynow.min.css" type="text/css"/>
-<div class="wm_bnow">
-<a target="_blank" class="btn btn-compact btn-primary" id="btn-buynow" href="http://c.affil.walmart.com/t/affsdk?l=http://affil.walmart.com/cart/buynow?items=45698070|2,631|1&wmlspartner=PD0Em23B4ME&affsdktrack=trackingid&veh=aff&affs=sdk&affsdktype=html&affsdkcomp=buynowbutton&colorscheme=orange&sizescheme=compact"><img src="//affil.walmart.com/buttons/assets/images/spark.png"/> Buy Now</a>
-<img src="//beacon.walmart.com/vm/ttap.gif?affpublisherid=PD0Em23B4ME&affsdkaction=buynow_button_impression&affsdktrack=trackingid&veh=aff&affs=sdk&affsdktype=html&affsdkcomp=buynowbutton&colorscheme=orange&sizescheme=compact" style="display:none;width:0px;height:0px;"/>
-</div>
+
 				</div>
 			</div>
 		</div>
@@ -107,41 +106,12 @@
 
 	</footer>
 	<!-- </div> -->
-	<script>
-		var item = {
-		}
 
-		var items = [
-		];
-
-
-		function onWalmartScriptLoaded() {
-			var buttonId = "btn-buynow";
-			// walmartBuyNow.addItem(buttonId, item); //To add the specified quantity of specified item-ID 
-			// walmartBuyNow.updateItem(buttonId, item); //To reset the quantity of the given item-ID to the given quantity
-			// walmartBuyNow.removeItem(buttonId, item); //To remove specified quantity of the specified item-ID
-			// walmartBuyNow.clearItem(buttonId, item); //To remove item completely
-			// walmartBuyNow.setItems(buttonId, items);
-			// walmartBuyNow.clearAllItems(buttonId);
-
-			walmartBuyNow.addClickListener( buttonId, function (items) {
-			});
-		}
-
-		(function (d, s, id, cb) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) return;
-			js = d.createElement(s); js.id = id;
-			js.src = "https://affil.walmart.com/buttons/buynow.min.js";
-			js.onload = cb;
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'walmart-buynow-js', onWalmartScriptLoaded));
-
-	</script>
 	<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="assets/javascript/script2.js"></script>
+
 </body>
 
 </html>
